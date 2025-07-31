@@ -16,12 +16,12 @@
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
-require('dotenv').config();
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import Keycloak from 'keycloak-js';
+
+
 
 // Load from .env
 const keycloak = new Keycloak({

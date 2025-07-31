@@ -1,6 +1,4 @@
 // src/App.js
-require('dotenv').config();
-
 import React, { useState } from 'react';
 import './App.css';
 import BucketPage from './BucketPage';

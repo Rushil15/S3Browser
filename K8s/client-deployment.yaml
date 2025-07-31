@@ -1,0 +1,70 @@
+#client-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: client-image:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 500m
+
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+spec:
+  selector:
+    app: client
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: NodePort  # Exposes client externally
+
+
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: client-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: client
+  minReplicas: 1
+  maxReplicas: 50
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 30  # shorten scale down delay
+      policies:
+        - type: Percent
+          value: 50
+          periodSeconds: 15
+

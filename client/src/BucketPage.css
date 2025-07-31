@@ -1,0 +1,121 @@
+/* BucketPage.css & FolderPage.css */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+html {
+  background-color: #1D2D44;
+}
+
+.App-header ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.BucketButton {
+  font-size: 30px !important;
+  padding: 0.6rem 1.2rem;
+  margin: 0.4rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1D2D44;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 500px; 
+  white-space: normal; 
+  word-wrap: break-word;
+  text-align: left; 
+  overflow-wrap: break-word;
+}
+
+
+.button-large:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.BucketPageHeading {
+  font-size: 70px !important;
+  margin: 20px 0;
+  color: white;
+  margin-bottom: 0px;
+  position: absolute;
+  top: 30px;
+  
+}
+
+.BucketBox {
+  background-color: #4B88A2;
+  padding: 50px 50px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  max-width: 90vw;
+  min-height: 600px;
+  margin-top: 200px; 
+  margin-bottom: 100px !important;
+}
+
+
+.BucketHeader {
+  font-size: 60px;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  position: absolute;
+  top: 240px !important;
+}
+
+.bucket-list {
+  margin-top: 90px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-wrapper {
+  position: absolute;
+  top: 200px;
+  bottom: 4000px; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+.BucketButton:hover {
+  background-color: #0056b3;
+}
